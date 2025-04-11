@@ -1,0 +1,40 @@
+<main>
+  <div class="container">
+    <div class="main-container">
+      <div class="main-content">
+        <h2>
+          <a [attr.href]="dataNews[0].link">{{ dataNews[0].title }}</a>
+        </h2>
+
+        <p id="time">{{ date }}</p>
+        <img class="main-image" [attr.src]="dataNews[0].image_url" alt="" />
+        <ul class="main-content-text">
+          <li *ngFor="let new of dataNews">
+            <a [attr.href]="new.link"> {{ new.title }}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-top">
+          <h3>Спортивні новини</h3>
+          <ul class="list">
+            <li *ngFor="let sportnew of SportNews">
+              <a [attr.href]="sportnew.link"> {{ sportnew.title }}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-bottom">
+          <div class="advertising">
+            <span>Тут має бути реклама!!!</span>
+            <img
+              width="50px"
+              height="50px"
+              src="assets/image/smile-743217.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

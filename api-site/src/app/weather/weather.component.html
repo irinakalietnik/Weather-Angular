@@ -1,0 +1,117 @@
+<main>
+  <div class="container">
+    <div class="main-container">
+      <div class="main-content">
+        <div class="bcground">
+          <h2>Погода у твоєму місті!</h2>
+          <h4>Обирай населений пункт</h4>
+          <form #cityform="ngForm" class="change-city">
+            <select
+              id="select"
+              class="select-city"
+              name="selectValue"
+              [(ngModel)]="selectValue"
+              (change)="onChangeSelectValue()"
+            >
+              <option value="Chernivtsi" selected>Чернівці</option>
+              <option value="Vinitsa">Вінниця</option>
+              <option value="Lviv">Львів</option>
+              <option value="Kiev">Київ</option>
+              <option value="Kharkiv">Харків</option>
+              <option value="London">Лондон</option>
+              <option value="Poltava">Полтава</option>
+            </select>
+
+            <p id="time">{{ date }}</p>
+          </form>
+        </div>
+        <div class="weather-today">
+          <div class="main-info">
+            <div class="icon-block">
+              <span id="temp"> {{ city }} {{ temp }} &deg;</span>
+              <img id="icon" [attr.src]="icon" />
+            </div>
+            <div id="clouds">{{ details }}</div>
+            <div id="feelsLike">Відчувається як {{ feelsLike }} &deg;</div>
+          </div>
+
+          <div class="info" id="tempMax">
+            Температурний максимум до {{ tempMax }} градусів Цельсія
+          </div>
+          <div class="info" id="humidity">
+            Відносна вологість повітря {{ humidity }} %
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-top">
+          <h3>Детальний прогноз</h3>
+          <ul class="list">
+            <li class="item">
+              <img
+                width="40px"
+                height="40px"
+                src="assets/image/free-icon-wind4.png"
+                alt=""
+              />
+              <div>
+                <p>Швидкість вітру</p>
+                <p class="large-text" id="speedWind">до {{ speedWind }} м/c</p>
+              </div>
+            </li>
+
+            <li class="item">
+              <img
+                width="40px"
+                height="40px"
+                src="assets/image/wind7.png"
+                alt=""
+              />
+              <div>
+                <p>Пориви вітру</p>
+                <p id="gustWind" class="large-text">до {{ gustWind }} м/с</p>
+              </div>
+            </li>
+            <li class="item">
+              <img
+                width="40px"
+                height="40px"
+                src="assets/image/down-right-arrow-2874680.png"
+                alt=""
+              />
+              <div>
+                <p>Напрямок вітру</p>
+                <p id="degWind" class="large-text">{{ degWind }} &deg;</p>
+              </div>
+            </li>
+
+            <li class="item">
+              <img
+                width="40px"
+                height="40px"
+                src="assets/image/eye8.png"
+                alt=""
+              />
+              <div>
+                <p>Видимість</p>
+                <p id="visibility" class="large-text">{{ visibility }} м</p>
+              </div>
+            </li>
+            <li class="item">
+              <img
+                width="40px"
+                height="40px"
+                src="assets/image/air-12446243.png"
+                alt=""
+              />
+              <div>
+                <p>Атмосферний тиск</p>
+                <p id="pressure" class="large-text">{{ pressure }} гПа</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
