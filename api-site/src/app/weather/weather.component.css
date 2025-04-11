@@ -36,7 +36,7 @@ h4 {
   padding: 16px 0;
   margin-bottom: 20px;
   border-radius: 6px;
-  background-image: url(/assets/image/4205986.jpg);
+  background-image: url("./assets/image/4205986.jpg");
   background-size: cover;
   background-position-x: left;
 }
